@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define in long long int
+#define ll int
+#define ld long double
+#define dd double
+#define repf(i, j, k) for (in i = j; i < k; i++)
+#define repb(i, j, k) for (in i = j; i > k; i--)
+#define repff(i, j, k) for (in i = j; i <= k; i++)
+#define repbb(i, j, k) for (in i = j; i >= k; i--)
+#define MOD 100000007
+#define mod 10000007
+#define endl "\n"
+in FACT[200005];
+void fun()
+{
+    FACT[0] = 1;
+    FACT[1] = 1;
+    for (int i = 2; i < 200005; i++)
+    {
+        FACT[i] = (i * FACT[i - 1]) % MOD;
+    }
+}
+in nCr(in n, in r)
+{
+    in num = FACT[n];
+    in den = (FACT[r] * FACT[n - r]) % MOD;
+    //cout<<n<<" "<<r<<" "<<num<<" "<<den<<endl;
+    return num / den;
+}
+void solve()
+{
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    fun();
+    in test;
+    cin >> test;
+    while (test--)
+    {
+        solve();
+    }
+}
